@@ -161,12 +161,10 @@ int main()
 
   n1.addNeighbour(&n2, 4.0f);
   n1.addNeighbour(&n3, 5.0f);
-
-  n2.addNeighbour(&n3, 1.0f);
+  n2.addNeighbour(&n4, 1.0f);
   n3.addNeighbour(&n4, 1.0f);
 
   std::list<Node*> l = astart(&n1, &n4);
-
   for (std::list<Node*>::iterator i = l.begin(); i != l.end(); ++i) {
     std::cout << (*i)->key[0] << " " << (*i)->key[1] << std::endl;
   }
