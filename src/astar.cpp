@@ -10,6 +10,8 @@
 /**
  * Helper function that will help estimate the remaining distance (the better
  * the heuristics, the faster A* will be)
+ * Here we're just calculating the Ecludian distance between *current* and
+ * *goal* because each node's key is just a 2D vector
  * @param  {Node*} current
  * @param  {Node*} goal
  * @return {float} an estimation of the remaining distance between current and goal
@@ -41,7 +43,7 @@ std::list<Node*> reconstructurePath(std::map<Node*, Node*> came_from, Node* curr
 /**
  * A* algorithm.
  *
- * This function takes a start and a goal Node* and, assuming
+ * This function takes a start and a goal {Node*} and, assuming
  * that you can reach the goal node from the start node, computes the almost
  * shortest path from the start to the goal. It uses a heuristic function to
  * compute some estimated remaining distance that can make this algorithm
@@ -150,6 +152,12 @@ std::list<Node*> astart(Node* start_node, Node* goal_node) {
 
 int main()
 {
+  // We're creating 4 {Node} such that
+  //  /--4-> 2 --1-\
+  // 1              |-> 4
+  //  \--5-> 3 --1-/
+  //  So here the shortest path would be 1 -> 2 -> 4
+
   float pos1[2] = {1.0f, 1.0f};
   Node n1 = Node(pos1);
   float pos2[2] = {2.0f, 2.0f};
