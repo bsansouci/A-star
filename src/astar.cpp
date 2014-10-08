@@ -162,9 +162,9 @@ int main()
   Node n1 = Node(pos1);
   float pos2[2] = {2.0f, 2.0f};
   Node n2 = Node(pos2);
-  float pos3[2] = {3.0f, 3.0f};
+  float pos3[2] = {2.0f, 0.0f};
   Node n3 = Node(pos3);
-  float pos4[2] = {4.0f, 4.0f};
+  float pos4[2] = {4.0f, 1.0f};
   Node n4 = Node(pos4);
 
   n1.addNeighbour(&n2, 4.0f);
